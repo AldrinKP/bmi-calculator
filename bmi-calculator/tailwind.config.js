@@ -8,17 +8,18 @@ export default {
 		},
 		fontSize: {
 			sm: '14px',
-			base: '16px',
-			lg: '20px',
-			xl: '24px',
-			'2xl': '48px',
-			'3xl': '64px',
+			'body-m': '16px',
+			'heading-s': '20px',
+			'heading-m': '24px',
+			'heading-l': '48px',
+			'heading-xl': '64px',
 		},
 		colors: {
 			blue: '#345FF6',
 			gunmetal: '#253347',
 			deb: '#5E6E85',
 			white: '#FFFFFF',
+			'blue-opaque': 'rgba(52, 94, 246, 0.15)',
 		},
 		lineHeight: {
 			heading: '1.1',
