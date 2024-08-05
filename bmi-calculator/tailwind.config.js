@@ -14,6 +14,15 @@ export default {
 			'2xl': '48px',
 			'3xl': '64px',
 		},
+		colors: {
+			blue: '#345FF6',
+			gunmetal: '#253347',
+			deb: '#5E6E85',
+			white: '#FFFFFF',
+		},
+		lineHeight: {
+			heading: '1.1',
+		},
 	},
 	plugins: [],
 };
