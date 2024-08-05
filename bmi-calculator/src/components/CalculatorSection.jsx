@@ -26,7 +26,7 @@ const CalculatorSection = () => {
 						health and well-being.
 					</p>
 				</div>
-				<div className="rounded-2xl border-2 border-gunmetal w-[564px] h-[484px]">
+				<div className="rounded-2xl border-2 border-gunmetal w-[564px]">
 					<div className="flex flex-col p-8 gap-8">
 						<h3 className="font-inter font-semibold text-heading-m tracking-tighter">
 							Enter your details below
@@ -82,6 +82,23 @@ const CalculatorSection = () => {
 										kg
 									</span>
 								</div>
+							</div>
+						</div>
+						<div className="bg-blue rounded-l-2xl rounded-r-[100px]">
+							<div className="text-white flex items-center p-8">
+								<div className="mr-[50px]">
+									<p className="font-inter font-bold tracking-wider">
+										Your BMI is...
+									</p>
+									<h1 className="font-inter font-semibold text-heading-xl">
+										23.4
+									</h1>
+								</div>
+								<p className="font-inter text-sm tracking-wider">
+									Your BMI suggests you’re a healthy weight.
+									Your ideal weight is between 63.3kgs -
+									85.2kgs.
+								</p>
 							</div>
 						</div>
 					</div>
