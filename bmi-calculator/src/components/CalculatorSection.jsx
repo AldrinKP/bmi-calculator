@@ -1,3 +1,7 @@
+import BodyText from './text/BodyText';
+import Heading from './text/Heading';
+import TextGroup from './text/TextGroup';
+
 const CalculatorSection = () => {
 	return (
 		<div className="ml-6 relative pb-[84px]">
@@ -17,18 +21,22 @@ const CalculatorSection = () => {
 				</svg>
 
 				<div className="flex items-center">
-					<div className="w-[564px]">
-						<h1 className="font-inter text-heading-xl font-bold text-gunmetal leading-heading tracking-[-0.075em] mb-[35px]">
-							Body Mass Index Calculator
-						</h1>
-						<p className="text-deb leading-normal w-[465px]">
+					<TextGroup width="564" gap="35">
+						<Heading
+							size="xl"
+							weight="bold"
+							className="tracking-[-0.075em]"
+						>
+							Body Mass <br /> Index Calculator
+						</Heading>
+						<BodyText className="w-[465px]">
 							Better understand your weight in relation to your
 							height using our body mass index (BM) calculator.
 							While BMI is not the sole determinant of a healthy
 							weight, it offers a valuable starting point to
 							evaluate your overall health and well-being.
-						</p>
-					</div>
+						</BodyText>
+					</TextGroup>
 					<div className="rounded-2xl bg-white w-[564px] shadow-[16px_32px_56px_0px_#8faecf40]">
 						<div className="flex flex-col p-8 gap-8">
 							<h3 className="font-inter font-semibold text-heading-m tracking-tighter">
