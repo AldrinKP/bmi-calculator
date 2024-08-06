@@ -1,4 +1,5 @@
 import sushiMan from '../assets/images/image-man-eating.webp';
+import TextGroup from './text/TextGroup';
 
 const ResultSection = () => {
 	return (
@@ -21,7 +22,7 @@ const ResultSection = () => {
 				<div className="absolute -z-10 bottom-0 w-[564px] bg-[#E7F5FE] rounded-[32px]"></div>
 				<img src={sushiMan} alt="Man eating sushi" />
 			</div>
-			<div className="flex flex-col gap-[35px] w-[465px] mt-[184px]">
+			<TextGroup gap="35" width="465" className="mt-[184px]">
 				<h1 className="font-inter text-gunmetal text-heading-l font-semibold tracking-tight leading-heading">
 					What your BMI result means
 				</h1>
@@ -35,7 +36,7 @@ const ResultSection = () => {
 					activity, ideally about 30 minutes daily for five days a
 					week.
 				</p>
-			</div>
+			</TextGroup>
 		</div>
 	);
 };
