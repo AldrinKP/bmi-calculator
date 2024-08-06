@@ -1,7 +1,11 @@
 /* eslint-disable react/prop-types */
-const TextGroup = ({ width, gap, children }) => {
+const TextGroup = ({ width, gap, children, className }) => {
 	return (
-		<div className={`flex flex-col gap-[${gap}px] w-[${width}px]`}>
+		<div
+			className={`flex flex-col gap-[${gap}px] w-[${width}px] ${
+				className ? className : ''
+			}`}
+		>
 			{children}
 		</div>
 	);
