@@ -2,7 +2,21 @@ import sushiMan from '../assets/images/image-man-eating.webp';
 
 const ResultSection = () => {
 	return (
-		<div className="flex justify-between mt-[113px] mx-auto w-[1160px]">
+		<div className="flex relative justify-between mt-[113px] mx-auto w-[1160px]">
+			<div className="absolute right-[27px] -top-[52px]">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="85.831"
+					height="200.501"
+					viewBox="0 0 85.831 200.501"
+				>
+					<path
+						fill="none"
+						stroke="#ACC1DE"
+						d="M82.719.092c7.831 41.7 2.31 140.08-82.43 200"
+					/>
+				</svg>
+			</div>
 			<div className="relative w-[564px]">
 				<div className="absolute -z-10 bottom-0 w-[564px] bg-[#E7F5FE] rounded-[32px]"></div>
 				<img src={sushiMan} alt="Man eating sushi" />
