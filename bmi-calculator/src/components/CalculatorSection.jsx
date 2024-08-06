@@ -16,7 +16,7 @@ const CalculatorSection = () => {
 					/>
 				</svg>
 
-				<div className="flex">
+				<div className="flex items-center">
 					<div className="w-[564px]">
 						<h1 className="font-inter text-heading-xl font-bold text-gunmetal leading-heading tracking-[-0.075em] mb-[35px]">
 							Body Mass Index Calculator
