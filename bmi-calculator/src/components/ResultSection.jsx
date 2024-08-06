@@ -1,5 +1,7 @@
 import sushiMan from '../assets/images/image-man-eating.webp';
 import TextGroup from './text/TextGroup';
+import Heading from './text/Heading';
+import BodyText from './text/BodyText';
 
 const ResultSection = () => {
 	return (
@@ -23,10 +25,10 @@ const ResultSection = () => {
 				<img src={sushiMan} alt="Man eating sushi" />
 			</div>
 			<TextGroup gap="35" width="465" className="mt-[184px]">
-				<h1 className="font-inter text-gunmetal text-heading-l font-semibold tracking-tight leading-heading">
+				<Heading size="l" weight="semibold" className="tracking-tight">
 					What your BMI result means
-				</h1>
-				<p className="font-inter text-deb text-body-m">
+				</Heading>
+				<BodyText>
 					A BMI range of 18.5 to 24.9 is considered a &apos;healthy
 					weight&apos; Maintaining a healthy weight may lower your
 					chances of experiencing health issues later on, such as
@@ -35,7 +37,7 @@ const ResultSection = () => {
 					and vegetables. Additionally, strive for regular physical
 					activity, ideally about 30 minutes daily for five days a
 					week.
-				</p>
+				</BodyText>
 			</TextGroup>
 		</div>
 	);
