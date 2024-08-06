@@ -35,7 +35,7 @@ const CalculatorSection = () => {
 								Enter your details below
 							</h3>
 							<div className="flex">
-								<div className="flex items-center mr-4">
+								<div className="flex grow items-center mr-8">
 									<input
 										type="radio"
 										id="metric"
@@ -46,7 +46,7 @@ const CalculatorSection = () => {
 										Metric
 									</label>
 								</div>
-								<div className="flex items-center mr-4">
+								<div className="flex grow items-center">
 									<input
 										type="radio"
 										id="metric"
