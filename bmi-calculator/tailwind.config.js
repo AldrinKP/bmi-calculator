@@ -24,6 +24,9 @@ export default {
 		lineHeight: {
 			heading: '1.1',
 		},
+		boxShadow: {
+			'custom-shadow': '16px 32px 56px 0 rgba(143, 174, 207, 0.25)',
+		},
 	},
 	plugins: [],
 };
