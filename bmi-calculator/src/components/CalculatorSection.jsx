@@ -37,7 +37,7 @@ const CalculatorSection = () => {
 							evaluate your overall health and well-being.
 						</BodyText>
 					</TextGroup>
-					<div className="rounded-2xl bg-white w-[564px] shadow-[16px_32px_56px_0px_#8faecf40]">
+					<div className="rounded-2xl bg-white w-[564px] shadow-custom-shadow">
 						<div className="flex flex-col p-8 gap-8">
 							<h3 className="font-inter font-semibold text-heading-m tracking-tighter">
 								Enter your details below
