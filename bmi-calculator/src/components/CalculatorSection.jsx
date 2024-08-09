@@ -10,12 +10,18 @@ const calculateBMI = (system, height, weight) => {
 };
 
 const CalculatorSection = () => {
+	const [metricValues, setMetricValues] = useState({ height: 0, weight: 0 });
 	const [heightValue, setHeightValue] = useState(0);
 	const [weightValue, setWeightValue] = useState(0);
 	const [radioValue, setRadioValue] = useState('metric');
 
 	const handleInputChange = (inputId, value) => {
-		inputId === 'height' ? setHeightValue(value) : setWeightValue(value);
+		if (radioValue === 'metric') {
+			setMetricValues((prev) => ({
+				...prev,
+				[inputId]: value,
+			}));
+		}
 	};
 	const handleRadioChange = (inputName) => {
 		setRadioValue(inputName);
@@ -42,7 +48,7 @@ const CalculatorSection = () => {
 				<div>
 					<input
 						type="text"
-						value={heightValue}
+						value={metricValues.height}
 						onChange={(e) => {
 							handleInputChange('height', e.target.value);
 						}}
@@ -60,7 +66,7 @@ const CalculatorSection = () => {
 				<div>
 					<input
 						type="text"
-						value={weightValue}
+						value={metricValues.weight}
 						onChange={(e) => {
 							handleInputChange('weight', e.target.value);
 						}}
