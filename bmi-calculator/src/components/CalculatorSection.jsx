@@ -3,12 +3,22 @@ import BodyText from './text/BodyText';
 import Heading from './text/Heading';
 import TextGroup from './text/TextGroup';
 
+const calculateBMI = (system, height, weight) => {
+	if (system === 'metric') {
+		return Math.round((weight / (height * height)) * 100000) / 10;
+	}
+};
+
 const CalculatorSection = () => {
 	const [heightValue, setHeightValue] = useState(0);
 	const [weightValue, setWeightValue] = useState(0);
+	const [radioValue, setRadioValue] = useState('metric');
 
 	const handleInputChange = (inputId, value) => {
 		inputId === 'height' ? setHeightValue(value) : setWeightValue(value);
+	};
+	const handleRadioChange = (inputName) => {
+		setRadioValue(inputName);
 	};
 
 	let resultContent = (
@@ -24,9 +34,7 @@ const CalculatorSection = () => {
 	);
 
 	if (heightValue > 0 && weightValue > 0) {
-		const BMI =
-			Math.round((weightValue / (heightValue * heightValue)) * 100000) /
-			10;
+		const BMI = calculateBMI(radioValue, heightValue, weightValue);
 		resultContent = (
 			<div className="flex justify-between items-center">
 				<div className="basis-1/2 mr-[50px]">
@@ -88,9 +96,12 @@ const CalculatorSection = () => {
 								<div className="flex grow items-center mr-8">
 									<input
 										type="radio"
-										id="metric"
-										defaultChecked
-										className="form-radio text-blue mr-[18px] w-[31px] h-[31px]"
+										name="metric"
+										checked={radioValue === 'metric'}
+										onChange={() =>
+											handleRadioChange('metric')
+										}
+										className="form-radio text-blue mr-[18px] w-[31px] h-[31px] cursor-pointer"
 									/>
 									<label className="font-inter font-bold text-gunmetal">
 										Metric
@@ -99,8 +110,12 @@ const CalculatorSection = () => {
 								<div className="flex grow items-center">
 									<input
 										type="radio"
-										id="metric"
-										className="form-radio text-blue mr-[18px] w-[31px] h-[31px]"
+										name="imperial"
+										checked={radioValue === 'imperial'}
+										onChange={() =>
+											handleRadioChange('imperial')
+										}
+										className="form-radio text-blue mr-[18px] w-[31px] h-[31px] cursor-pointer"
 									/>
 									<label className="font-inter font-bold text-gunmetal">
 										Imperial
@@ -122,7 +137,7 @@ const CalculatorSection = () => {
 													e.target.value
 												);
 											}}
-											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
+											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
 											cm
@@ -143,7 +158,7 @@ const CalculatorSection = () => {
 													e.target.value
 												);
 											}}
-											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
+											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
 											kg
