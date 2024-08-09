@@ -76,7 +76,7 @@ const CalculatorSection = () => {
 
 	const imperialInputFields = (
 		<>
-			<div className="flex gap-11">
+			<div className="flex gap-[60px]">
 				<div className="flex flex-col">
 					<label className="mb-2 text-sm font-inter text-deb">
 						Height
@@ -91,30 +91,25 @@ const CalculatorSection = () => {
 							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 						></input>
 						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							cm
+							ft
 						</span>
 					</div>
 				</div>
-				<div className="flex flex-col">
-					<label className="mb-2 text-sm font-inter text-deb">
-						Weight
-					</label>
-					<div>
-						<input
-							type="text"
-							value={weightValue}
-							onChange={(e) => {
-								handleInputChange('weight', e.target.value);
-							}}
-							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-						></input>
-						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							kg
-						</span>
-					</div>
+				<div className="content-end">
+					<input
+						type="text"
+						value={weightValue}
+						onChange={(e) => {
+							handleInputChange('weight', e.target.value);
+						}}
+						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+					></input>
+					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+						in
+					</span>
 				</div>
 			</div>
-			<div className="flex gap-11">
+			<div className="flex gap-[57px]">
 				<div className="flex flex-col">
 					<label className="mb-2 text-sm font-inter text-deb">
 						Height
@@ -129,27 +124,22 @@ const CalculatorSection = () => {
 							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 						></input>
 						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							cm
+							st
 						</span>
 					</div>
 				</div>
-				<div className="flex flex-col">
-					<label className="mb-2 text-sm font-inter text-deb">
-						Weight
-					</label>
-					<div>
-						<input
-							type="text"
-							value={weightValue}
-							onChange={(e) => {
-								handleInputChange('weight', e.target.value);
-							}}
-							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-						></input>
-						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							kg
-						</span>
-					</div>
+				<div className="content-end">
+					<input
+						type="text"
+						value={weightValue}
+						onChange={(e) => {
+							handleInputChange('weight', e.target.value);
+						}}
+						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+					></input>
+					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+						lbs
+					</span>
 				</div>
 			</div>
 		</>
