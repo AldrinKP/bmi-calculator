@@ -161,7 +161,14 @@ const CalculatorSection = () => {
 		</>
 	);
 
-	if (metricValues.height > 0 && metricValues.weight > 0) {
+	if (
+		(radioValue === 'metric' &&
+			metricValues.height > 0 &&
+			metricValues.weight > 0) ||
+		(radioValue === 'imperial' &&
+			imperialValues.ft > 0 &&
+			imperialValues.st > 0)
+	) {
 		const BMI = calculateBMI(
 			radioValue,
 			metricValues.height,
