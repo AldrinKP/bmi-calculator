@@ -7,6 +7,10 @@ const CalculatorSection = () => {
 	const [heightValue, setHeightValue] = useState(0);
 	const [weightValue, setWeightValue] = useState(0);
 
+	const onInputChange = (inputId, value) => {
+		inputId === 'height' ? setHeightValue(value) : setWeightValue(value);
+	};
+
 	let resultContent1 = (
 		<div className="flex items-center">
 			<div className="mr-[50px]">
@@ -106,6 +110,12 @@ const CalculatorSection = () => {
 										<input
 											type="text"
 											value={heightValue}
+											onChange={(e) => {
+												onInputChange(
+													'height',
+													e.target.value
+												);
+											}}
 											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
@@ -121,6 +131,12 @@ const CalculatorSection = () => {
 										<input
 											type="text"
 											value={weightValue}
+											onChange={(e) => {
+												onInputChange(
+													'weight',
+													e.target.value
+												);
+											}}
 											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
