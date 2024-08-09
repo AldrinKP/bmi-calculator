@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import BodyText from './text/BodyText';
 import Heading from './text/Heading';
 import TextGroup from './text/TextGroup';
 
 const CalculatorSection = () => {
+	const [heightValue, setHeightValue] = useState(0);
+	const [weightValue, setWeightValue] = useState(0);
+
 	let resultContent1 = (
 		<div className="flex items-center">
 			<div className="mr-[50px]">
@@ -101,7 +105,7 @@ const CalculatorSection = () => {
 									<div>
 										<input
 											type="text"
-											value="0"
+											value={heightValue}
 											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
@@ -116,7 +120,7 @@ const CalculatorSection = () => {
 									<div>
 										<input
 											type="text"
-											value="0"
+											value={weightValue}
 											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
