@@ -7,37 +7,43 @@ const CalculatorSection = () => {
 	const [heightValue, setHeightValue] = useState(0);
 	const [weightValue, setWeightValue] = useState(0);
 
-	const onInputChange = (inputId, value) => {
+	const handleInputChange = (inputId, value) => {
 		inputId === 'height' ? setHeightValue(value) : setWeightValue(value);
 	};
 
-	let resultContent1 = (
-		<div className="flex items-center">
-			<div className="mr-[50px]">
-				<p className="font-inter font-bold tracking-wider">
-					Your BMI is...
-				</p>
-				<h1 className="font-inter font-semibold text-heading-xl">
-					23.4
-				</h1>
-			</div>
-			<p className="font-inter text-sm tracking-wider">
-				Your BMI suggests you&apos;re a healthy weight. Your ideal
-				weight is between 63.3kgs - 85.2kgs.
-			</p>
-		</div>
-	);
-
-	let resultContent2 = (
+	let resultContent = (
 		<div className="flex flex-col gap-4">
 			<h1 className="font-inter text-heading-m font-semibold tracking-tight">
 				Welcome!
 			</h1>
 			<p className="font-inter text-sm">
-				Enter your height and weight and you’ll see your BMI result here
+				Enter your height and weight and you&apos;ll see your BMI result
+				here
 			</p>
 		</div>
 	);
+
+	if (heightValue > 0 && weightValue > 0) {
+		const BMI =
+			Math.round((weightValue / (heightValue * heightValue)) * 100000) /
+			10;
+		resultContent = (
+			<div className="flex items-center">
+				<div className="mr-[50px]">
+					<p className="font-inter font-bold tracking-wider">
+						Your BMI is...
+					</p>
+					<h1 className="font-inter font-semibold text-heading-xl">
+						{BMI}
+					</h1>
+				</div>
+				<p className="font-inter text-sm tracking-wider">
+					Your BMI suggests you&apos;re a healthy weight. Your ideal
+					weight is between 63.3kgs - 85.2kgs.
+				</p>
+			</div>
+		);
+	}
 
 	return (
 		<div className="ml-6 relative pb-[84px] h-[737px]">
@@ -111,7 +117,7 @@ const CalculatorSection = () => {
 											type="text"
 											value={heightValue}
 											onChange={(e) => {
-												onInputChange(
+												handleInputChange(
 													'height',
 													e.target.value
 												);
@@ -132,7 +138,7 @@ const CalculatorSection = () => {
 											type="text"
 											value={weightValue}
 											onChange={(e) => {
-												onInputChange(
+												handleInputChange(
 													'weight',
 													e.target.value
 												);
@@ -146,7 +152,7 @@ const CalculatorSection = () => {
 								</div>
 							</div>
 							<div className="bg-blue text-white p-8 rounded-l-2xl rounded-r-[100px]">
-								{resultContent2}
+								{resultContent}
 							</div>
 						</div>
 					</div>
