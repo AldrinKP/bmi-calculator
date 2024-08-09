@@ -26,6 +26,12 @@ const CalculatorSection = () => {
 				[inputId]: value,
 			}));
 		}
+		if (radioValue === 'imperial') {
+			setImperialValues((prev) => ({
+				...prev,
+				[inputId]: value,
+			}));
+		}
 	};
 	const handleRadioChange = (inputName) => {
 		setRadioValue(inputName);
@@ -96,7 +102,7 @@ const CalculatorSection = () => {
 							type="text"
 							value={imperialValues.ft}
 							onChange={(e) => {
-								handleInputChange('height', e.target.value);
+								handleInputChange('ft', e.target.value);
 							}}
 							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 						></input>
@@ -110,7 +116,7 @@ const CalculatorSection = () => {
 						type="text"
 						value={imperialValues.in}
 						onChange={(e) => {
-							handleInputChange('weight', e.target.value);
+							handleInputChange('in', e.target.value);
 						}}
 						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 					></input>
@@ -129,7 +135,7 @@ const CalculatorSection = () => {
 							type="text"
 							value={imperialValues.st}
 							onChange={(e) => {
-								handleInputChange('height', e.target.value);
+								handleInputChange('st', e.target.value);
 							}}
 							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 						></input>
@@ -143,7 +149,7 @@ const CalculatorSection = () => {
 						type="text"
 						value={imperialValues.lbs}
 						onChange={(e) => {
-							handleInputChange('weight', e.target.value);
+							handleInputChange('lbs', e.target.value);
 						}}
 						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
 					></input>
