@@ -28,8 +28,8 @@ const CalculatorSection = () => {
 			Math.round((weightValue / (heightValue * heightValue)) * 100000) /
 			10;
 		resultContent = (
-			<div className="flex items-center">
-				<div className="mr-[50px]">
+			<div className="flex justify-between items-center">
+				<div className="basis-1/2 mr-[50px]">
 					<p className="font-inter font-bold tracking-wider">
 						Your BMI is...
 					</p>
@@ -37,7 +37,7 @@ const CalculatorSection = () => {
 						{BMI}
 					</h1>
 				</div>
-				<p className="font-inter text-sm tracking-wider">
+				<p className="basis-1/2 font-inter text-sm tracking-wider">
 					Your BMI suggests you&apos;re a healthy weight. Your ideal
 					weight is between 63.3kgs - 85.2kgs.
 				</p>
