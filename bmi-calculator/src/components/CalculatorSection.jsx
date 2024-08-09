@@ -101,6 +101,7 @@ const CalculatorSection = () => {
 									<div>
 										<input
 											type="text"
+											value="0"
 											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
@@ -115,6 +116,7 @@ const CalculatorSection = () => {
 									<div>
 										<input
 											type="text"
+											value="0"
 											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb"
 										></input>
 										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
