@@ -3,8 +3,36 @@ import Heading from './text/Heading';
 import TextGroup from './text/TextGroup';
 
 const CalculatorSection = () => {
+	let resultContent1 = (
+		<div className="flex items-center">
+			<div className="mr-[50px]">
+				<p className="font-inter font-bold tracking-wider">
+					Your BMI is...
+				</p>
+				<h1 className="font-inter font-semibold text-heading-xl">
+					23.4
+				</h1>
+			</div>
+			<p className="font-inter text-sm tracking-wider">
+				Your BMI suggests you&apos;re a healthy weight. Your ideal
+				weight is between 63.3kgs - 85.2kgs.
+			</p>
+		</div>
+	);
+
+	let resultContent2 = (
+		<div className="flex flex-col gap-4">
+			<h1 className="font-inter text-heading-m font-semibold tracking-tight">
+				Welcome!
+			</h1>
+			<p className="font-inter text-sm">
+				Enter your height and weight and you’ll see your BMI result here
+			</p>
+		</div>
+	);
+
 	return (
-		<div className="ml-6 relative pb-[84px]">
+		<div className="ml-6 relative pb-[84px] h-[737px]">
 			<div className="absolute -z-10 bg-gradient-to-tl from-[#D6E6FE] from-0% h-[737px] w-[978px] rounded-b-[35px]"></div>
 			<div className="pt-[72px] pl-[116px]">
 				<svg
@@ -20,8 +48,8 @@ const CalculatorSection = () => {
 					/>
 				</svg>
 
-				<div className="flex items-center">
-					<TextGroup width="564" gap="35">
+				<div className="flex">
+					<TextGroup width="564" gap="35" className="mt-[99px]">
 						<Heading
 							size="xl"
 							weight="bold"
@@ -95,22 +123,8 @@ const CalculatorSection = () => {
 									</div>
 								</div>
 							</div>
-							<div className="bg-blue rounded-l-2xl rounded-r-[100px]">
-								<div className="text-white flex items-center p-8">
-									<div className="mr-[50px]">
-										<p className="font-inter font-bold tracking-wider">
-											Your BMI is...
-										</p>
-										<h1 className="font-inter font-semibold text-heading-xl">
-											23.4
-										</h1>
-									</div>
-									<p className="font-inter text-sm tracking-wider">
-										Your BMI suggests you’re a healthy
-										weight. Your ideal weight is between
-										63.3kgs - 85.2kgs.
-									</p>
-								</div>
+							<div className="bg-blue text-white p-8 rounded-l-2xl rounded-r-[100px]">
+								{resultContent2}
 							</div>
 						</div>
 					</div>
