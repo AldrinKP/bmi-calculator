@@ -33,6 +33,128 @@ const CalculatorSection = () => {
 		</div>
 	);
 
+	const metricInputFields = (
+		<div className="flex gap-11">
+			<div className="flex flex-col">
+				<label className="mb-2 text-sm font-inter text-deb">
+					Height
+				</label>
+				<div>
+					<input
+						type="text"
+						value={heightValue}
+						onChange={(e) => {
+							handleInputChange('height', e.target.value);
+						}}
+						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+					></input>
+					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+						cm
+					</span>
+				</div>
+			</div>
+			<div className="flex flex-col">
+				<label className="mb-2 text-sm font-inter text-deb">
+					Weight
+				</label>
+				<div>
+					<input
+						type="text"
+						value={weightValue}
+						onChange={(e) => {
+							handleInputChange('weight', e.target.value);
+						}}
+						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+					></input>
+					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+						kg
+					</span>
+				</div>
+			</div>
+		</div>
+	);
+
+	const imperialInputFields = (
+		<>
+			<div className="flex gap-11">
+				<div className="flex flex-col">
+					<label className="mb-2 text-sm font-inter text-deb">
+						Height
+					</label>
+					<div>
+						<input
+							type="text"
+							value={heightValue}
+							onChange={(e) => {
+								handleInputChange('height', e.target.value);
+							}}
+							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+						></input>
+						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+							cm
+						</span>
+					</div>
+				</div>
+				<div className="flex flex-col">
+					<label className="mb-2 text-sm font-inter text-deb">
+						Weight
+					</label>
+					<div>
+						<input
+							type="text"
+							value={weightValue}
+							onChange={(e) => {
+								handleInputChange('weight', e.target.value);
+							}}
+							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+						></input>
+						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+							kg
+						</span>
+					</div>
+				</div>
+			</div>
+			<div className="flex gap-11">
+				<div className="flex flex-col">
+					<label className="mb-2 text-sm font-inter text-deb">
+						Height
+					</label>
+					<div>
+						<input
+							type="text"
+							value={heightValue}
+							onChange={(e) => {
+								handleInputChange('height', e.target.value);
+							}}
+							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+						></input>
+						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+							cm
+						</span>
+					</div>
+				</div>
+				<div className="flex flex-col">
+					<label className="mb-2 text-sm font-inter text-deb">
+						Weight
+					</label>
+					<div>
+						<input
+							type="text"
+							value={weightValue}
+							onChange={(e) => {
+								handleInputChange('weight', e.target.value);
+							}}
+							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
+						></input>
+						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
+							kg
+						</span>
+					</div>
+				</div>
+			</div>
+		</>
+	);
+
 	if (heightValue > 0 && weightValue > 0) {
 		const BMI = calculateBMI(radioValue, heightValue, weightValue);
 		resultContent = (
@@ -122,50 +244,9 @@ const CalculatorSection = () => {
 									</label>
 								</div>
 							</div>
-							<div className="flex gap-11">
-								<div className="flex flex-col">
-									<label className="mb-2 text-sm font-inter text-deb">
-										Height
-									</label>
-									<div>
-										<input
-											type="text"
-											value={heightValue}
-											onChange={(e) => {
-												handleInputChange(
-													'height',
-													e.target.value
-												);
-											}}
-											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-										></input>
-										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-											cm
-										</span>
-									</div>
-								</div>
-								<div className="flex flex-col">
-									<label className="mb-2 text-sm font-inter text-deb">
-										Weight
-									</label>
-									<div>
-										<input
-											type="text"
-											value={weightValue}
-											onChange={(e) => {
-												handleInputChange(
-													'weight',
-													e.target.value
-												);
-											}}
-											className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-										></input>
-										<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-											kg
-										</span>
-									</div>
-								</div>
-							</div>
+							{radioValue === 'metric'
+								? metricInputFields
+								: imperialInputFields}
 							<div className="bg-blue text-white p-8 rounded-l-2xl rounded-r-[100px]">
 								{resultContent}
 							</div>
