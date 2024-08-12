@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { calculateMetricBMI } from '../../utilities';
 
 const MetricCalculator = ({ setBMIResult }) => {
 	const [metricValues, setMetricValues] = useState({ height: 0, weight: 0 });
@@ -9,6 +10,14 @@ const MetricCalculator = ({ setBMIResult }) => {
 			[inputId]: value,
 		}));
 	};
+
+	useEffect(() => {
+		if (metricValues.height > 0 && metricValues.weight > 0) {
+			setBMIResult(
+				calculateMetricBMI(metricValues.height, metricValues.weight)
+			);
+		}
+	}, [metricValues, setBMIResult]);
 
 	return (
 		<div className="flex gap-11">

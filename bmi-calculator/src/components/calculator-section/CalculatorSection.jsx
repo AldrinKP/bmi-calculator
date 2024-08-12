@@ -203,7 +203,7 @@ const CalculatorSection = () => {
 								</div>
 							</div>
 							{radioValue === 'metric' ? (
-								<MetricCalculator setBMIResult />
+								<MetricCalculator setBMIResult={setBMIResult} />
 							) : (
 								imperialInputFields
 							)}
