@@ -4,12 +4,6 @@ import Heading from '../text/Heading';
 import TextGroup from '../text/TextGroup';
 import MetricCalculator from './MetricCalculator';
 
-const calculateBMI = (system, height, weight) => {
-	if (system === 'metric') {
-		return Math.round((weight / (height * height)) * 100000) / 10;
-	}
-};
-
 const CalculatorSection = () => {
 	const [imperialValues, setImperialValues] = useState({
 		ft: 0,
