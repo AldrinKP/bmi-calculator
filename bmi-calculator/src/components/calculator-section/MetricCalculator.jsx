@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const MetricCalculator = () => {
+const MetricCalculator = ({ setBMIResult }) => {
 	const [metricValues, setMetricValues] = useState({ height: 0, weight: 0 });
 
 	const handleInputChange = (inputId, value) => {

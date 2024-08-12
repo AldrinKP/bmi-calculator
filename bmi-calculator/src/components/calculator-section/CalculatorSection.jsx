@@ -5,6 +5,8 @@ import TextGroup from '../text/TextGroup';
 import MetricCalculator from './MetricCalculator';
 
 const CalculatorSection = () => {
+	const [BMIResult, setBMIResult] = useState();
+
 	const [imperialValues, setImperialValues] = useState({
 		ft: 0,
 		in: 0,
@@ -201,7 +203,7 @@ const CalculatorSection = () => {
 								</div>
 							</div>
 							{radioValue === 'metric' ? (
-								<MetricCalculator />
+								<MetricCalculator setBMIResult />
 							) : (
 								imperialInputFields
 							)}
