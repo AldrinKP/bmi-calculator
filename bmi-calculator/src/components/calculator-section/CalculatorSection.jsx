@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import BodyText from './text/BodyText';
-import Heading from './text/Heading';
-import TextGroup from './text/TextGroup';
+import BodyText from '../text/BodyText';
+import Heading from '../text/Heading';
+import TextGroup from '../text/TextGroup';
+import MetricCalculator from './MetricCalculator';
 
 const calculateBMI = (system, height, weight) => {
 	if (system === 'metric') {
@@ -10,7 +11,6 @@ const calculateBMI = (system, height, weight) => {
 };
 
 const CalculatorSection = () => {
-	const [metricValues, setMetricValues] = useState({ height: 0, weight: 0 });
 	const [imperialValues, setImperialValues] = useState({
 		ft: 0,
 		in: 0,
@@ -19,20 +19,6 @@ const CalculatorSection = () => {
 	});
 	const [radioValue, setRadioValue] = useState('metric');
 
-	const handleInputChange = (inputId, value) => {
-		if (radioValue === 'metric') {
-			setMetricValues((prev) => ({
-				...prev,
-				[inputId]: value,
-			}));
-		}
-		if (radioValue === 'imperial') {
-			setImperialValues((prev) => ({
-				...prev,
-				[inputId]: value,
-			}));
-		}
-	};
 	const handleRadioChange = (inputName) => {
 		setRadioValue(inputName);
 	};
@@ -46,47 +32,6 @@ const CalculatorSection = () => {
 				Enter your height and weight and you&apos;ll see your BMI result
 				here
 			</p>
-		</div>
-	);
-
-	const metricInputFields = (
-		<div className="flex gap-11">
-			<div className="flex flex-col">
-				<label className="mb-2 text-sm font-inter text-deb">
-					Height
-				</label>
-				<div>
-					<input
-						type="text"
-						value={metricValues.height}
-						onChange={(e) => {
-							handleInputChange('height', e.target.value);
-						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						cm
-					</span>
-				</div>
-			</div>
-			<div className="flex flex-col">
-				<label className="mb-2 text-sm font-inter text-deb">
-					Weight
-				</label>
-				<div>
-					<input
-						type="text"
-						value={metricValues.weight}
-						onChange={(e) => {
-							handleInputChange('weight', e.target.value);
-						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						kg
-					</span>
-				</div>
-			</div>
 		</div>
 	);
 
@@ -161,36 +106,36 @@ const CalculatorSection = () => {
 		</>
 	);
 
-	if (
-		(radioValue === 'metric' &&
-			metricValues.height > 0 &&
-			metricValues.weight > 0) ||
-		(radioValue === 'imperial' &&
-			imperialValues.ft > 0 &&
-			imperialValues.st > 0)
-	) {
-		const BMI = calculateBMI(
-			radioValue,
-			metricValues.height,
-			metricValues.weight
-		);
-		resultContent = (
-			<div className="flex justify-between items-center">
-				<div className="basis-1/2 mr-[50px]">
-					<p className="font-inter font-bold tracking-wider">
-						Your BMI is...
-					</p>
-					<h1 className="font-inter font-semibold text-heading-xl">
-						{BMI}
-					</h1>
-				</div>
-				<p className="basis-1/2 font-inter text-sm tracking-wider">
-					Your BMI suggests you&apos;re a healthy weight. Your ideal
-					weight is between 63.3kgs - 85.2kgs.
-				</p>
-			</div>
-		);
-	}
+	// if (
+	// 	(radioValue === 'metric' &&
+	// 		metricValues.height > 0 &&
+	// 		metricValues.weight > 0) ||
+	// 	(radioValue === 'imperial' &&
+	// 		imperialValues.ft > 0 &&
+	// 		imperialValues.st > 0)
+	// ) {
+	// 	const BMI = calculateBMI(
+	// 		radioValue,
+	// 		metricValues.height,
+	// 		metricValues.weight
+	// 	);
+	// 	resultContent = (
+	// 		<div className="flex justify-between items-center">
+	// 			<div className="basis-1/2 mr-[50px]">
+	// 				<p className="font-inter font-bold tracking-wider">
+	// 					Your BMI is...
+	// 				</p>
+	// 				<h1 className="font-inter font-semibold text-heading-xl">
+	// 					{BMI}
+	// 				</h1>
+	// 			</div>
+	// 			<p className="basis-1/2 font-inter text-sm tracking-wider">
+	// 				Your BMI suggests you&apos;re a healthy weight. Your ideal
+	// 				weight is between 63.3kgs - 85.2kgs.
+	// 			</p>
+	// 		</div>
+	// 	);
+	// }
 
 	return (
 		<div className="ml-6 relative pb-[84px] h-[737px]">
@@ -261,9 +206,11 @@ const CalculatorSection = () => {
 									</label>
 								</div>
 							</div>
-							{radioValue === 'metric'
-								? metricInputFields
-								: imperialInputFields}
+							{radioValue === 'metric' ? (
+								<MetricCalculator />
+							) : (
+								imperialInputFields
+							)}
 							<div className="bg-blue text-white p-8 rounded-l-2xl rounded-r-[100px]">
 								{resultContent}
 							</div>

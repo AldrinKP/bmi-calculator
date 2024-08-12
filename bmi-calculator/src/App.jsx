@@ -1,4 +1,4 @@
-import CalculatorSection from './components/CalculatorSection';
+import CalculatorSection from './components/calculator-section/CalculatorSection';
 import LimitSection from './components/LimitSection';
 import ResultSection from './components/ResultSection';
 import TipsSection from './components/TipsSection';
