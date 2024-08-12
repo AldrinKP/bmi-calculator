@@ -6,12 +6,13 @@ import MetricCalculator from './MetricCalculator';
 import ImperialCalculator from './ImperialCalculator';
 
 const CalculatorSection = () => {
-	const [BMIResult, setBMIResult] = useState();
+	const [BMIResult, setBMIResult] = useState(null);
 
 	const [radioValue, setRadioValue] = useState('metric');
 
 	const handleRadioChange = (inputName) => {
 		setRadioValue(inputName);
+		setBMIResult(null);
 	};
 
 	let resultContent = (
