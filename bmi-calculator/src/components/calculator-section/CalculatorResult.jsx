@@ -19,12 +19,13 @@ const CalculatorResult = ({ result }) => {
 					Your BMI is...
 				</p>
 				<h1 className="font-inter font-semibold text-heading-xl">
-					{result}
+					{result.bmi}
 				</h1>
 			</div>
 			<p className="basis-1/2 font-inter text-sm tracking-wider">
-				Your BMI suggests you&apos;re a healthy weight. Your ideal
-				weight is between 63.3kgs - 85.2kgs.
+				Your BMI suggests you&apos;re {result.weightClass}. Your ideal
+				weight is between{' '}
+				<span className="font-bold">{result.range}</span>.
 			</p>
 		</div>
 	);
