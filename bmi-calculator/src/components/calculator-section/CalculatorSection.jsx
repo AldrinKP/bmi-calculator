@@ -4,6 +4,7 @@ import Heading from '../text/Heading';
 import TextGroup from '../text/TextGroup';
 import MetricCalculator from './MetricCalculator';
 import ImperialCalculator from './ImperialCalculator';
+import CalculatorResult from './CalculatorResult';
 
 const CalculatorSection = () => {
 	const [BMIResult, setBMIResult] = useState(null);
@@ -14,37 +15,6 @@ const CalculatorSection = () => {
 		setRadioValue(inputName);
 		setBMIResult(null);
 	};
-
-	let resultContent = (
-		<div className="flex flex-col gap-4">
-			<h1 className="font-inter text-heading-m font-semibold tracking-tight">
-				Welcome!
-			</h1>
-			<p className="font-inter text-sm">
-				Enter your height and weight and you&apos;ll see your BMI result
-				here
-			</p>
-		</div>
-	);
-
-	if (BMIResult) {
-		resultContent = (
-			<div className="flex justify-between items-center">
-				<div className="basis-1/2 mr-[50px]">
-					<p className="font-inter font-bold tracking-wider">
-						Your BMI is...
-					</p>
-					<h1 className="font-inter font-semibold text-heading-xl">
-						{BMIResult}
-					</h1>
-				</div>
-				<p className="basis-1/2 font-inter text-sm tracking-wider">
-					Your BMI suggests you&apos;re a healthy weight. Your ideal
-					weight is between 63.3kgs - 85.2kgs.
-				</p>
-			</div>
-		);
-	}
 
 	return (
 		<div className="ml-6 relative pb-[84px] h-[737px]">
@@ -123,7 +93,7 @@ const CalculatorSection = () => {
 								/>
 							)}
 							<div className="bg-blue text-white p-8 rounded-l-2xl rounded-r-[100px]">
-								{resultContent}
+								<CalculatorResult result={BMIResult} />
 							</div>
 						</div>
 					</div>
