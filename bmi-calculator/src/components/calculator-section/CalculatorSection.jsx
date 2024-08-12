@@ -102,36 +102,24 @@ const CalculatorSection = () => {
 		</>
 	);
 
-	// if (
-	// 	(radioValue === 'metric' &&
-	// 		metricValues.height > 0 &&
-	// 		metricValues.weight > 0) ||
-	// 	(radioValue === 'imperial' &&
-	// 		imperialValues.ft > 0 &&
-	// 		imperialValues.st > 0)
-	// ) {
-	// 	const BMI = calculateBMI(
-	// 		radioValue,
-	// 		metricValues.height,
-	// 		metricValues.weight
-	// 	);
-	// 	resultContent = (
-	// 		<div className="flex justify-between items-center">
-	// 			<div className="basis-1/2 mr-[50px]">
-	// 				<p className="font-inter font-bold tracking-wider">
-	// 					Your BMI is...
-	// 				</p>
-	// 				<h1 className="font-inter font-semibold text-heading-xl">
-	// 					{BMI}
-	// 				</h1>
-	// 			</div>
-	// 			<p className="basis-1/2 font-inter text-sm tracking-wider">
-	// 				Your BMI suggests you&apos;re a healthy weight. Your ideal
-	// 				weight is between 63.3kgs - 85.2kgs.
-	// 			</p>
-	// 		</div>
-	// 	);
-	// }
+	if (BMIResult) {
+		resultContent = (
+			<div className="flex justify-between items-center">
+				<div className="basis-1/2 mr-[50px]">
+					<p className="font-inter font-bold tracking-wider">
+						Your BMI is...
+					</p>
+					<h1 className="font-inter font-semibold text-heading-xl">
+						{BMIResult}
+					</h1>
+				</div>
+				<p className="basis-1/2 font-inter text-sm tracking-wider">
+					Your BMI suggests you&apos;re a healthy weight. Your ideal
+					weight is between 63.3kgs - 85.2kgs.
+				</p>
+			</div>
+		);
+	}
 
 	return (
 		<div className="ml-6 relative pb-[84px] h-[737px]">
