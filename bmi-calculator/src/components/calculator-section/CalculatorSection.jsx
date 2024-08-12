@@ -3,16 +3,11 @@ import BodyText from '../text/BodyText';
 import Heading from '../text/Heading';
 import TextGroup from '../text/TextGroup';
 import MetricCalculator from './MetricCalculator';
+import ImperialCalculator from './ImperialCalculator';
 
 const CalculatorSection = () => {
 	const [BMIResult, setBMIResult] = useState();
 
-	const [imperialValues, setImperialValues] = useState({
-		ft: 0,
-		in: 0,
-		st: 0,
-		lbs: 0,
-	});
 	const [radioValue, setRadioValue] = useState('metric');
 
 	const handleRadioChange = (inputName) => {
@@ -29,77 +24,6 @@ const CalculatorSection = () => {
 				here
 			</p>
 		</div>
-	);
-
-	const imperialInputFields = (
-		<>
-			<div className="flex gap-[60px]">
-				<div className="flex flex-col">
-					<label className="mb-2 text-sm font-inter text-deb">
-						Height
-					</label>
-					<div>
-						<input
-							type="text"
-							value={imperialValues.ft}
-							onChange={(e) => {
-								handleInputChange('ft', e.target.value);
-							}}
-							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-						></input>
-						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							ft
-						</span>
-					</div>
-				</div>
-				<div className="content-end">
-					<input
-						type="text"
-						value={imperialValues.in}
-						onChange={(e) => {
-							handleInputChange('in', e.target.value);
-						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						in
-					</span>
-				</div>
-			</div>
-			<div className="flex gap-[57px]">
-				<div className="flex flex-col">
-					<label className="mb-2 text-sm font-inter text-deb">
-						Weight
-					</label>
-					<div>
-						<input
-							type="text"
-							value={imperialValues.st}
-							onChange={(e) => {
-								handleInputChange('st', e.target.value);
-							}}
-							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-						></input>
-						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							st
-						</span>
-					</div>
-				</div>
-				<div className="content-end">
-					<input
-						type="text"
-						value={imperialValues.lbs}
-						onChange={(e) => {
-							handleInputChange('lbs', e.target.value);
-						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold w-[238px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						lbs
-					</span>
-				</div>
-			</div>
-		</>
 	);
 
 	if (BMIResult) {
@@ -193,7 +117,9 @@ const CalculatorSection = () => {
 							{radioValue === 'metric' ? (
 								<MetricCalculator setBMIResult={setBMIResult} />
 							) : (
-								imperialInputFields
+								<ImperialCalculator
+									setBMIResult={setBMIResult}
+								/>
 							)}
 							<div className="bg-blue text-white p-8 rounded-l-2xl rounded-r-[100px]">
 								{resultContent}

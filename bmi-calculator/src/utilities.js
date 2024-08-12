@@ -3,8 +3,8 @@ export const calculateMetricBMI = (height, weight) => {
 };
 
 export const calculateImperialBMI = (ft, inches, st, lbs) => {
-	const heightInInches = ft * 12 + inches;
-	const weightInPounds = st * 14 + lbs;
+	const heightInInches = parseInt(ft) * 12 + parseInt(inches);
+	const weightInPounds = parseInt(st) * 14 + parseInt(lbs);
 	return (
 		Math.round((weightInPounds / heightInInches / heightInInches) * 7030) /
 		10
