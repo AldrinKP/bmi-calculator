@@ -5,7 +5,7 @@ import TipsSection from './components/TipsSection';
 
 function App() {
 	return (
-		<div>
+		<div className="flex flex-col items-center">
 			<CalculatorSection />
 			<ResultSection />
 			<TipsSection />

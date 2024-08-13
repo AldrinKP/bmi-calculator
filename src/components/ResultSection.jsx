@@ -5,7 +5,7 @@ import BodyText from './text/BodyText';
 
 const ResultSection = () => {
 	return (
-		<div className="flex relative justify-between mt-[113px] mx-auto w-[1160px]">
+		<div className="flex relative justify-between mt-[113px] w-[1160px]">
 			<div className="absolute right-[27px] -top-[52px]">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

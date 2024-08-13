@@ -17,7 +17,7 @@ const CalculatorSection = () => {
 	};
 
 	return (
-		<div className="ml-6 relative pb-[84px] h-[737px]">
+		<div className="relative pb-[84px] h-[737px]">
 			<div className="absolute -z-10 bg-gradient-to-tl from-[#D6E6FE] from-0% h-[737px] w-[978px] rounded-b-[35px]"></div>
 			<div className="pt-[72px] pl-[116px]">
 				<svg
