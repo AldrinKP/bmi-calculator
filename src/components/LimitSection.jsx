@@ -6,7 +6,7 @@ import { limitations } from '../assets/content';
 const LimitSection = () => {
 	return (
 		<div className="relative my-[120px] w-[1160px] h-[704px]">
-			<TextGroup width="564" gap="35">
+			<TextGroup width="564" gap="35" className="gap-[35px]">
 				<Heading size="l" weight="semibold" className="tracking-tight">
 					Limitations of BMI
 				</Heading>
