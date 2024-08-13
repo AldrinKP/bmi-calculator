@@ -17,15 +17,16 @@ const CalculatorSection = () => {
 	};
 
 	return (
-		<div className="relative pb-[84px] h-[737px]">
-			<div className="absolute -z-10 bg-gradient-to-tl from-[#D6E6FE] from-0% h-[737px] w-[978px] rounded-b-[35px]"></div>
-			<div className="pt-[72px] pl-[116px]">
+		<div className="relative pb-[84px] lg:pr-10 h-auto lg:w-auto md:w-[768px]">
+			<div className="absolute -z-10 bg-gradient-to-tl from-[#D6E6FE] from-0% lg:h-[737px] lg:w-[978px] md:h-[640px] md:w-[768px] rounded-b-[35px]"></div>
+			<div className="lg:pt-[72px] lg:pl-[116px]">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="64"
 					height="64"
 					fill="none"
 					viewBox="0 0 64 64"
+					className="h-[40px] w-[40px] lg:h-[64px] lg:w-[64px] lg:ml-0 mx-auto mt-8"
 				>
 					<path
 						fill="#B3D3F1"
@@ -33,16 +34,19 @@ const CalculatorSection = () => {
 					/>
 				</svg>
 
-				<div className="flex">
-					<TextGroup width="564" gap="35" className="mt-[99px]">
+				<div className="flex lg:flex-row lg:items-stretch flex-col items-center">
+					<TextGroup
+						width="564"
+						className="lg:mt-[99px] md:mt-10 lg:gap-[35px] md:gap-6 text-center lg:text-start lg:w-[564px] w-[686px] md:mb-10"
+					>
 						<Heading
 							size="xl"
 							weight="bold"
-							className="tracking-[-0.075em]"
+							className="tracking-[-0.075em] md:text-heading-l"
 						>
 							Body Mass <br /> Index Calculator
 						</Heading>
-						<BodyText className="w-[465px]">
+						<BodyText className="lg:w-[465px] w-auto">
 							Better understand your weight in relation to your
 							height using our body mass index (BM) calculator.
 							While BMI is not the sole determinant of a healthy
@@ -50,7 +54,7 @@ const CalculatorSection = () => {
 							evaluate your overall health and well-being.
 						</BodyText>
 					</TextGroup>
-					<div className="rounded-2xl bg-white w-[564px] shadow-custom-shadow">
+					<div className="rounded-2xl bg-white lg:w-[564px] md:w-[686px] shadow-custom-shadow">
 						<div className="flex flex-col p-8 gap-8">
 							<h3 className="font-inter font-semibold text-heading-m tracking-tighter">
 								Enter your details below
