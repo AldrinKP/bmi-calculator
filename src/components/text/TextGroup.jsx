@@ -1,10 +1,6 @@
-const TextGroup = ({ width, gap, children, className }) => {
+const TextGroup = ({ children, className }) => {
 	return (
-		<div
-			className={`flex flex-col gap-[${gap}px] ${
-				width ? `w-[${width}px]` : ''
-			} ${className ? className : ''}`}
-		>
+		<div className={`flex flex-col ${className ? className : ''}`}>
 			{children}
 		</div>
 	);

@@ -35,10 +35,7 @@ const CalculatorSection = () => {
 				</svg>
 
 				<div className="flex lg:flex-row lg:items-stretch flex-col items-center">
-					<TextGroup
-						width="564"
-						className="lg:mt-[99px] mt-10 lg:gap-[35px] gap-6 text-center lg:text-start lg:w-[564px] md:w-[686px] w-[327px] md:mb-10 mb-[48px]"
-					>
+					<TextGroup className="lg:mt-[99px] mt-10 lg:gap-[35px] gap-6 text-center lg:text-start lg:w-[564px] md:w-[686px] w-[327px] md:mb-10 mb-[48px]">
 						<Heading className="lg:tracking-[-0.075em] text-heading-l font-semibold lg:text-heading-xl lg:font-bold">
 							Body Mass <br /> Index Calculator
 						</Heading>
