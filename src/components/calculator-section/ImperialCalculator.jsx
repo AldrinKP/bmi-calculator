@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { calculateImperialBMI } from '../../utilities';
+import InputField from './InputField';
 
 const ImperialCalculator = ({ setBMIResult }) => {
 	const [imperialValues, setImperialValues] = useState({
@@ -36,66 +37,44 @@ const ImperialCalculator = ({ setBMIResult }) => {
 					<label className="mb-2 text-sm font-inter text-deb">
 						Height
 					</label>
-					<div>
-						<input
-							type="text"
-							value={imperialValues.ft}
-							onChange={(e) => {
-								handleInputChange('ft', e.target.value);
-							}}
-							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold lg:w-[238px] md:w-[300px] border-2 rounded-xl border-deb cursor-pointer"
-						></input>
-						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							ft
-						</span>
-					</div>
-				</div>
-				<div className="content-end">
-					<input
-						type="text"
-						value={imperialValues.in}
+					<InputField
+						value={imperialValues.ft}
 						onChange={(e) => {
-							handleInputChange('in', e.target.value);
+							handleInputChange('ft', e.target.value);
 						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold lg:w-[238px] md:w-[300px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						in
-					</span>
+						unit="ft"
+					/>
 				</div>
+				<InputField
+					value={imperialValues.in}
+					onChange={(e) => {
+						handleInputChange('in', e.target.value);
+					}}
+					unit="in"
+					className="content-end"
+				/>
 			</div>
 			<div className="flex gap-[57px]">
 				<div className="flex flex-col">
 					<label className="mb-2 text-sm font-inter text-deb">
 						Weight
 					</label>
-					<div>
-						<input
-							type="text"
-							value={imperialValues.st}
-							onChange={(e) => {
-								handleInputChange('st', e.target.value);
-							}}
-							className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold lg:w-[238px] md:w-[300px] border-2 rounded-xl border-deb cursor-pointer"
-						></input>
-						<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-							st
-						</span>
-					</div>
-				</div>
-				<div className="content-end">
-					<input
-						type="text"
-						value={imperialValues.lbs}
+					<InputField
+						value={imperialValues.st}
 						onChange={(e) => {
-							handleInputChange('lbs', e.target.value);
+							handleInputChange('st', e.target.value);
 						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold lg:w-[238px] md:w-[300px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						lbs
-					</span>
+						unit="st"
+					/>
 				</div>
+				<InputField
+					value={imperialValues.lbs}
+					onChange={(e) => {
+						handleInputChange('lbs', e.target.value);
+					}}
+					unit="lbs"
+					className="content-end"
+				/>
 			</div>
 		</>
 	);

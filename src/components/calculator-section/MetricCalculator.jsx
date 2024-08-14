@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { calculateMetricBMI } from '../../utilities';
+import InputField from './InputField';
 
 const MetricCalculator = ({ setBMIResult }) => {
 	const [metricValues, setMetricValues] = useState({ height: 0, weight: 0 });
@@ -25,37 +26,25 @@ const MetricCalculator = ({ setBMIResult }) => {
 				<label className="mb-2 text-sm font-inter text-deb">
 					Height
 				</label>
-				<div>
-					<input
-						type="text"
-						value={metricValues.height}
-						onChange={(e) => {
-							handleInputChange('height', e.target.value);
-						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold lg:w-[238px] md:w-[300px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						cm
-					</span>
-				</div>
+				<InputField
+					value={metricValues.height}
+					onChange={(e) => {
+						handleInputChange('height', e.target.value);
+					}}
+					unit="cm"
+				/>
 			</div>
 			<div className="flex flex-col">
 				<label className="mb-2 text-sm font-inter text-deb">
 					Weight
 				</label>
-				<div>
-					<input
-						type="text"
-						value={metricValues.weight}
-						onChange={(e) => {
-							handleInputChange('weight', e.target.value);
-						}}
-						className="px-6 py-5 text-gunmetal text-heading-m font-inter font-semibold lg:w-[238px] md:w-[300px] border-2 rounded-xl border-deb cursor-pointer"
-					></input>
-					<span className="ml-[-55px] text-blue font-inter text-heading-m font-semibold">
-						kg
-					</span>
-				</div>
+				<InputField
+					value={metricValues.weight}
+					onChange={(e) => {
+						handleInputChange('weight', e.target.value);
+					}}
+					unit="kg"
+				/>
 			</div>
 		</div>
 	);
