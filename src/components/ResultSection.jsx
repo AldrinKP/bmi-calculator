@@ -24,7 +24,7 @@ const ResultSection = () => {
 				<div className="absolute -z-10 bottom-0 w-[564px] bg-[#E7F5FE] rounded-[32px]"></div>
 				<img src={sushiMan} alt="Man eating sushi" />
 			</div>
-			<TextGroup gap="35" width="465" className="mt-[184px]">
+			<TextGroup className="mt-[184px] gap-[35px] w-[465px]">
 				<Heading size="l" weight="semibold" className="tracking-tight">
 					What your BMI result means
 				</Heading>
