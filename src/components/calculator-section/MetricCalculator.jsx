@@ -21,7 +21,7 @@ const MetricCalculator = ({ setBMIResult }) => {
 	}, [metricValues, setBMIResult]);
 
 	return (
-		<div className="flex gap-11">
+		<div className="flex md:flex-row flex-col md:gap-11 gap-4">
 			<div className="flex flex-col">
 				<label className="mb-2 text-sm font-inter text-deb">
 					Height

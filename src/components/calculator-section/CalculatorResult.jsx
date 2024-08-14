@@ -13,12 +13,12 @@ const CalculatorResult = ({ result }) => {
 		);
 	}
 	return (
-		<div className="flex justify-between items-center">
+		<div className="flex md:flex-row flex-col justify-between md:items-center">
 			<div className="basis-1/2 mr-[50px]">
 				<p className="font-inter font-bold tracking-wider">
 					Your BMI is...
 				</p>
-				<h1 className="font-inter font-semibold text-heading-xl">
+				<h1 className="font-inter font-semibold md:text-heading-xl text-heading-l">
 					{result.bmi}
 				</h1>
 			</div>

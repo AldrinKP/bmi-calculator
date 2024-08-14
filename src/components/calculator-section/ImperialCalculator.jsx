@@ -43,6 +43,7 @@ const ImperialCalculator = ({ setBMIResult }) => {
 							handleInputChange('ft', e.target.value);
 						}}
 						unit="ft"
+						width="w-[132px]"
 					/>
 				</div>
 				<InputField
@@ -51,6 +52,7 @@ const ImperialCalculator = ({ setBMIResult }) => {
 						handleInputChange('in', e.target.value);
 					}}
 					unit="in"
+					width="w-[132px]"
 					className="content-end"
 				/>
 			</div>
@@ -65,6 +67,7 @@ const ImperialCalculator = ({ setBMIResult }) => {
 							handleInputChange('st', e.target.value);
 						}}
 						unit="st"
+						width="w-[132px]"
 					/>
 				</div>
 				<InputField
@@ -73,6 +76,7 @@ const ImperialCalculator = ({ setBMIResult }) => {
 						handleInputChange('lbs', e.target.value);
 					}}
 					unit="lbs"
+					width="w-[132px]"
 					className="content-end"
 				/>
 			</div>

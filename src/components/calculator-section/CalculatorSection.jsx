@@ -17,8 +17,8 @@ const CalculatorSection = () => {
 	};
 
 	return (
-		<div className="relative pb-[84px] lg:pr-10 h-auto lg:w-auto md:w-[768px]">
-			<div className="absolute -z-10 bg-gradient-to-tl from-[#D6E6FE] from-0% lg:h-[737px] lg:w-[978px] md:h-[640px] md:w-[768px] rounded-b-[35px]"></div>
+		<div className="relative pb-[84px] lg:pr-10 h-auto lg:w-auto md:w-[768px] w-[375px]">
+			<div className="absolute -z-10 bg-gradient-to-tl from-[#D6E6FE] from-0% lg:h-[737px] lg:w-[978px] md:h-[640px] md:w-[768px] h-[640px] w-[375px] rounded-b-[35px]"></div>
 			<div className="lg:pt-[72px] lg:pl-[116px]">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -37,13 +37,9 @@ const CalculatorSection = () => {
 				<div className="flex lg:flex-row lg:items-stretch flex-col items-center">
 					<TextGroup
 						width="564"
-						className="lg:mt-[99px] md:mt-10 lg:gap-[35px] md:gap-6 text-center lg:text-start lg:w-[564px] w-[686px] md:mb-10"
+						className="lg:mt-[99px] mt-10 lg:gap-[35px] gap-6 text-center lg:text-start lg:w-[564px] md:w-[686px] w-[327px] md:mb-10 mb-[48px]"
 					>
-						<Heading
-							size="xl"
-							weight="bold"
-							className="tracking-[-0.075em] md:text-heading-l"
-						>
+						<Heading className="lg:tracking-[-0.075em] text-heading-l font-semibold lg:text-heading-xl lg:font-bold">
 							Body Mass <br /> Index Calculator
 						</Heading>
 						<BodyText className="lg:w-[465px] w-auto">
@@ -54,8 +50,8 @@ const CalculatorSection = () => {
 							evaluate your overall health and well-being.
 						</BodyText>
 					</TextGroup>
-					<div className="rounded-2xl bg-white lg:w-[564px] md:w-[686px] shadow-custom-shadow">
-						<div className="flex flex-col p-8 gap-8">
+					<div className="rounded-2xl bg-white lg:w-[564px] md:w-[686px] w-[328px] shadow-custom-shadow">
+						<div className="flex flex-col p-8 md:gap-8 gap-6">
 							<h3 className="font-inter font-semibold text-heading-m tracking-tighter">
 								Enter your details below
 							</h3>
@@ -96,7 +92,7 @@ const CalculatorSection = () => {
 									setBMIResult={setBMIResult}
 								/>
 							)}
-							<div className="bg-blue text-white p-8 rounded-l-2xl rounded-r-[100px]">
+							<div className="bg-blue text-white p-8 md:rounded-l-2xl md:rounded-r-[100px] rounded-2xl">
 								<CalculatorResult result={BMIResult} />
 							</div>
 						</div>
