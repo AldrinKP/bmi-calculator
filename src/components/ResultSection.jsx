@@ -5,8 +5,8 @@ import BodyText from './text/BodyText';
 
 const ResultSection = () => {
 	return (
-		<div className="flex relative justify-between mt-[113px] w-[1160px]">
-			<div className="absolute right-[27px] -top-[52px]">
+		<div className="flex md:flex-row flex-col relative lg:justify-between md:gap-[75px] gap-12 mt-[113px] lg:w-[1160px] md:w-[841px] w-full">
+			<div className="absolute right-[27px] -top-[52px] lg:block hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="85.831"
@@ -20,12 +20,12 @@ const ResultSection = () => {
 					/>
 				</svg>
 			</div>
-			<div className="relative w-[564px]">
-				<div className="absolute -z-10 bottom-0 w-[564px] bg-[#E7F5FE] rounded-[32px]"></div>
+			<div className="relative lg:w-[564px] md:w-[435px] w-full">
+				<div className="absolute -z-10 bottom-0 bg-[#E7F5FE] rounded-[32px]"></div>
 				<img src={sushiMan} alt="Man eating sushi" />
 			</div>
-			<TextGroup className="mt-[184px] gap-[35px] w-[465px]">
-				<Heading size="l" weight="semibold" className="tracking-tight">
+			<TextGroup className="lg:mt-[184px] md:m-0 mx-4 md:justify-center lg:gap-[35px] gap-[32px] lg:w-[465px] md:w-[331px]">
+				<Heading className="tracking-tight lg:text-heading-l text-[32px] font-semibold">
 					What your BMI result means
 				</Heading>
 				<BodyText>
