@@ -53,8 +53,8 @@ const icons = {
 
 const TipsSection = () => {
 	return (
-		<div className="flex justify-center items-center mt-[96px] rounded-[35px] bg-gradient-to-tl from-[#D6E6FE]/25 from-0% w-[1392px] h-[402px]">
-			<div className="flex gap-8 w-[1159px] h-[234px]">
+		<div className="flex mt-[96px] rounded-[35px] bg-gradient-to-tl from-[#D6E6FE]/25 from-0% lg:max-w-[1392px] w-full">
+			<div className="flex lg:flex-row flex-col lg:gap-8 gap-10 lg:px-[116px] md:px-[39px] px-6 lg:py-[72px] md:py-[60px] py-[56px]">
 				<TipCard icon={icons.eating}>
 					<TextGroup className="w-full gap-6">
 						<Heading className="tracking-tight text-heading-m font-semibold">
