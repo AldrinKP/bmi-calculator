@@ -56,12 +56,8 @@ const TipsSection = () => {
 		<div className="flex justify-center items-center mt-[96px] rounded-[35px] bg-gradient-to-tl from-[#D6E6FE]/25 from-0% w-[1392px] h-[402px]">
 			<div className="flex gap-8 w-[1159px] h-[234px]">
 				<TipCard icon={icons.eating}>
-					<TextGroup width="365" gap="24">
-						<Heading
-							size="m"
-							weight="semibold"
-							className="tracking-tight"
-						>
+					<TextGroup className="w-full gap-6">
+						<Heading className="tracking-tight text-heading-m font-semibold">
 							Healthy Eating
 						</Heading>
 						<BodyText>
@@ -72,12 +68,8 @@ const TipsSection = () => {
 					</TextGroup>
 				</TipCard>
 				<TipCard icon={icons.exercise}>
-					<TextGroup width="365" gap="24">
-						<Heading
-							size="m"
-							weight="semibold"
-							className="tracking-tight"
-						>
+					<TextGroup className="w-full gap-6">
+						<Heading className="tracking-tight text-heading-m font-semibold">
 							Regular Exercise
 						</Heading>
 						<BodyText>
@@ -88,13 +80,8 @@ const TipsSection = () => {
 					</TextGroup>
 				</TipCard>
 				<TipCard icon={icons.sleep}>
-					<TextGroup width="365" gap="24">
-						<Heading
-							size="m"
-							weight="semibold"
-							className="tracking-tight"
-							h
-						>
+					<TextGroup className="w-full gap-6">
+						<Heading className="tracking-tight text-heading-m font-semibold">
 							Adequate Sleep
 						</Heading>
 						<BodyText>
