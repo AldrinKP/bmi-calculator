@@ -5,9 +5,9 @@ import { limitations } from '../assets/content';
 
 const LimitSection = () => {
 	return (
-		<div className="relative my-[120px] w-[1160px] h-[704px]">
-			<TextGroup className="gap-[35px] w-[564px]">
-				<Heading className="tracking-tight text-heading-l font-semibold">
+		<div className="relative my-[120px] lg:w-[1160px] lg:h-[704px] mx-4">
+			<TextGroup className="lg:gap-[35px] gap-8 lg:w-[564px] w-auto lg:text-start text-center lg:mx-0 mx-2">
+				<Heading className="tracking-tight lg:text-heading-l text-[32px] font-semibold">
 					Limitations of BMI
 				</Heading>
 				<BodyText>
@@ -17,7 +17,7 @@ const LimitSection = () => {
 					cases, the measurement may not be beneficial to use.
 				</BodyText>
 			</TextGroup>
-			<div className="absolute left-[165px] top-[251px]">
+			<div className="hidden lg:block absolute left-[165px] top-[251px]">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="94.664"
@@ -31,65 +31,61 @@ const LimitSection = () => {
 					/>
 				</svg>
 			</div>
-
 			<div className="absolute top-0 right-[99px] w-[365px] rounded-2xl shadow-custom-shadow bg-white">
-				<TextGroup gap="16" className="p-8">
+				<TextGroup className="p-8 gap-4">
 					<div className="flex gap-3 items-center">
 						{limitations.gender.icon}
-						<Heading size="s" weight="semibold">
+						<Heading className="text-heading-s font-semibold">
 							{limitations.gender.title}
 						</Heading>
 					</div>
 					<BodyText>{limitations.gender.text}</BodyText>
 				</TextGroup>
 			</div>
-			<div className="absolute flex gap-8 top-[264px] right-0">
-				<div className="w-[365px] rounded-2xl shadow-custom-shadow bg-white">
-					<TextGroup gap="16" className="p-8">
-						<div className="flex gap-3 items-center">
-							{limitations.age.icon}
-							<Heading size="s" weight="semibold">
-								{limitations.age.title}
-							</Heading>
-						</div>
-						<BodyText>{limitations.age.text}</BodyText>
-					</TextGroup>
-				</div>
-				<div className="w-[365px] rounded-2xl shadow-custom-shadow bg-white">
-					<TextGroup gap="16" className="p-8">
-						<div className="flex gap-3 items-center">
-							{limitations.muscle.icon}
-							<Heading size="s" weight="semibold">
-								{limitations.muscle.title}
-							</Heading>
-						</div>
-						<BodyText>{limitations.muscle.text}</BodyText>
-					</TextGroup>
-				</div>
+			<div className="absolute top-[264px] right-[397px] w-[365px] rounded-2xl shadow-custom-shadow bg-white">
+				<TextGroup className="p-8 gap-4">
+					<div className="flex gap-3 items-center">
+						{limitations.age.icon}
+						<Heading className="text-heading-s font-semibold">
+							{limitations.age.title}
+						</Heading>
+					</div>
+					<BodyText>{limitations.age.text}</BodyText>
+				</TextGroup>
 			</div>
-			<div className="absolute flex gap-8 bottom-0 left-[199px]">
-				<div className="w-[365px] rounded-2xl shadow-custom-shadow bg-white">
-					<TextGroup gap="16" className="p-8">
-						<div className="flex gap-3 items-center">
-							{limitations.pregnancy.icon}
-							<Heading size="s" weight="semibold">
-								{limitations.pregnancy.title}
-							</Heading>
-						</div>
-						<BodyText>{limitations.pregnancy.text}</BodyText>
-					</TextGroup>
-				</div>
-				<div className="w-[365px] rounded-2xl shadow-custom-shadow bg-white">
-					<TextGroup gap="16" className="p-8">
-						<div className="flex gap-3 items-center">
-							{limitations.race.icon}
-							<Heading size="s" weight="semibold">
-								{limitations.race.title}
-							</Heading>
-						</div>
-						<BodyText>{limitations.race.text}</BodyText>
-					</TextGroup>
-				</div>
+			<div className="absolute top-[264px] right-0 w-[365px] rounded-2xl shadow-custom-shadow bg-white">
+				<TextGroup className="p-8 gap-4">
+					<div className="flex gap-3 items-center">
+						{limitations.muscle.icon}
+						<Heading className="text-heading-s font-semibold">
+							{limitations.muscle.title}
+						</Heading>
+					</div>
+					<BodyText>{limitations.muscle.text}</BodyText>
+				</TextGroup>
+			</div>
+
+			<div className="absolute bottom-0 right-[199px] w-[365px] rounded-2xl shadow-custom-shadow bg-white">
+				<TextGroup className="p-8 gap-4">
+					<div className="flex gap-3 items-center">
+						{limitations.pregnancy.icon}
+						<Heading className="text-heading-s font-semibold">
+							{limitations.pregnancy.title}
+						</Heading>
+					</div>
+					<BodyText>{limitations.pregnancy.text}</BodyText>
+				</TextGroup>
+			</div>
+			<div className="absolute bottom-0 left-[199px] w-[365px] rounded-2xl shadow-custom-shadow bg-white">
+				<TextGroup className="p-8 gap-4">
+					<div className="flex gap-3 items-center">
+						{limitations.race.icon}
+						<Heading className="text-heading-s font-semibold">
+							{limitations.race.title}
+						</Heading>
+					</div>
+					<BodyText>{limitations.race.text}</BodyText>
+				</TextGroup>
 			</div>
 		</div>
 	);
